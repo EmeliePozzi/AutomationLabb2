@@ -12,9 +12,9 @@ pipeline {
             steps {
                 dir('labb2') {
                     
-                    script {
+                   
                         bat 'mvn clean install'
-                    }
+                    
                 }
             }
         }
