@@ -5,16 +5,16 @@ pipeline {
         
         stage('Checkout (Hämtar senaste kodversionen för den valda grenen)') {
             steps {
-                git 'https://github.com/EmeliePozzi/TrailrunnerEmelie.git'
+                git 'https://github.com/EmeliePozzi/AutomationLabb2.git'
             }    
         }
         stage('Build trailrunnerProject') {
             steps {
                 dir('labb2') {
                     
-                   
-                        bat 'mvn clean install'
-                    
+                    script {
+                        sh 'mvn clean install'
+                    }
                 }
             }
         }
