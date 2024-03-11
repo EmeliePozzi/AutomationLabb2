@@ -9,15 +9,13 @@ pipeline {
             }    
         }
         stage('Build trailrunnerProject') {
-            steps {
-                dir('labb2') {
-                    
-                    script {
-                        sh 'mvn clean install'
-                    }
-                }
-            }
+    steps {
+        dir('labb2') {
+            bat 'mvn clean install'
         }
+    }
+}
+
         stage('Test trailrunnerProject') {
             steps {
                 dir('labb2') {
